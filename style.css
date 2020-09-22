@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  min-height: 100vh;
+  width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.corousel-container {
+  width: 100%;
+  max-width: 1440px;
+  overflow: hidden;
+}
+
+.carousel-slider {
+  display: flex;
+  min-width: 100%;
+  transition: transform ease-in-out 250ms;
+}
+
+.slide-item {
+  min-width: inherit;
+}
+
+.button-group {
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-group img {
+  width: 8px;
+  height: 12px;
+}
+
+.button-group button {
+  background-color: hsl(0, 0%, 100%);
+  padding: 10px;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+}
+
+.button-group button:hover {
+  background-color: hsl(0, 0%, 90%);
+}
+
+.button-group button:focus {
+  outline: none;
+}
+
+.prev-btn {
+  border-radius: 500px 0px 0px 500px;
+}
+
+.next-btn {
+  border-radius: 0px 500px 500px 0px;
+}
+.image {
+  position: relative;
+  background-image: url(/images/pattern-bg.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  padding: 30px;
+}
+
+.image > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+  box-shadow: 0 20px 16px rgba(105, 90, 122, 0.2);
+  border-radius: 7px;
+}
+.content-container p {
+  font-weight: 300;
+  font-size: 18px;
+  padding: 0px 38px;
+  color: hsl(240, 38%, 20%);
+  line-height: 22px;
+}
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infos p {
+  color: hsl(240, 38%, 20%);
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 16px;
+}
+.infos span {
+  color: hsl(240, 18%, 77%);
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+  .slide-item {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 50px;
+  }
+  .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .image {
+    flex: 1;
+  }
+
+  .infos {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    padding-top: 32px;
+  }
+
+  .infos p,
+  .infos span {
+    margin: 0;
+    padding-right: 5px;
+  }
+}
